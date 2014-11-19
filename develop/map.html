@@ -1,0 +1,231 @@
+<!doctype html>
+<html> 
+	<head> 
+		<title>ПОПЕЧИТЕЛЬСКИЙ СОВЕТ</title>
+
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<!--[if IE]>
+            <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	    <![endif]-->
+
+		<link  type="text/css" rel="stylesheet" href="css/stylesheets/screen.css"  charset="utf-8">
+
+		<link  type="text/css" rel="stylesheet" cssWatch="no"  href="js/swiper-slider/idangerous.swiper.css">
+		<!-- <link  type="text/css" rel="stylesheet" cssWatch="no"  href="js/bootstrap-modal/css/bootstrap.min.css"> -->
+		<!-- <link  type="text/css" rel="stylesheet" cssWatch="no"  href="js/pickmeup-datepicker/css/pickmeup.min.css"> -->
+
+		<script type="text/javascript" src="js/jquery-ui-1.10.4.custom/js/jquery-1.10.2.js"> </script>
+
+		<script src="js/swiper-slider/idangerous.swiper.js" type="text/javascript"  charset="utf-8"> </script>
+		<script src="js/bootstrap-modal/js/bootstrap.min.js" type="text/javascript"  charset="utf-8"> </script>
+		<!-- <script src="js/pickmeup-datepicker/js/jquery.pickmeup.min.js"></script>   -->
+		<!-- <script src="js/jquery.mask.js"></script>   -->
+		<script type="text/javascript" src="//api-maps.yandex.ru/2.1/?lang=ru_RU&amp;coordorder=longlat"></script>
+		<script type="text/javascript" src="js/js.js">	</script>
+		
+		<!--[if lt IE 9]>
+			<script  type="text/javascript" src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+		
+
+	<header>
+			<div class="content-width">
+				<a href="/" class="logo"><img src="images/logo.png" alt=""></a>
+				<div class="header-search-form">
+					<form action="">
+						<a href="javascript:;" class="tooglefontsize" >версия для слабовидящих</a>
+						<div class="input"><input type="text" placeholder="Поиск"><input type="submit"></div>
+						<div class="bottom-head">
+							<a href="" class="create-ask"><span>Задать вопрос</span></a>
+							<div class="social">
+								<a href="" class="item-1"><i></i></a>
+								<a href="" class="item-2"><i></i></a>
+								<a href="" class="item-3"><i></i></a>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</header>
+
+
+
+		<!-- Навигация -->
+		<nav>
+			<div class="nav-table table">
+				<div class="row">
+					<div class="cell item-1">
+						<div>
+							<a href="#">О совете</a>
+							<ul>
+								<li><a href="#">Общая информация о Совете</a></li>
+								<li><a href="#">выписки из протоколов заседания совета</a></li>
+								<li><a href="#">Состав совета</a></li>
+								<li><a href="#">Состав секци</a></li>
+								<li><a href="#">Нормативно-правовы акты</a></li>
+								<li><a href="#">план работы совета на год</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="cell item-2">
+						<div>
+							<a href="#">Попечительский совет</a>
+							<ul>
+								<li><a href="#">Общая информация</a></li>
+								<li><a href="#">Из истории попечительства</a></li>
+								<li><a href="#">Как стать попечителем</a></li>
+								<li><a href="#">Социально ориентированные НКО на территории России</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="cell item-3">
+						<div>
+							<a href="#">Новости</a>
+						</div>
+					</div>
+					<div class="cell item-4">
+						<div>
+							<a href="#">Вопросы и ответы</a>
+						</div>
+					</div>
+					<div class="cell item-5">
+						<div>
+							<a href="#">Блоги</a>
+						</div>
+					</div>
+					<div class="cell item-6">
+						<div>
+							<a href="#">Контакты</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</nav>
+		<!-- / Навигация -->
+
+		<section>
+			<div class="content-width breadcorms">
+				<a href="#"><span>Главная</span></a><a href="#"><span>Ололо ололшеньки</span></a><span>опросы и ответы</span>
+			</div>
+			<div class="navo">
+				<div class="content-width ">
+					<h4>Из истории попечительства</h4>
+					<ul>
+						<li><a href="#"><span>Общая информация<i></i></span></a></li>	
+						<li><a href="#"><span>Из истории попечительства<i></i></span></a></li>	
+						<li><a href="#"><span>Как стать попечителем<i></i></span></a></li>	
+						<li><a class="active" href="#"><span>Социально ориентированные НКО на территории России<i></i></span></a></li>	
+					</ul>
+					<div class="img" style="background: url(http://popsovet.dev.legion.info/img/about-5.jpg);"></div>
+				</div>
+			</div>
+				<div class="content-width  manytext">
+				<h1>Cписок социально ориентированных некоммерческих  организаций на территории России.</h1>
+			</div>
+				<script>
+
+        ymaps.ready(function () {
+
+            //info = 
+            var myMap = new ymaps.Map('map', {
+                    center: [69.935689, 60.16241],
+                    zoom: 3,
+                    behaviors: ['default', 'scrollZoom']
+                }),
+
+                clusterer = new ymaps.Clusterer({
+                    preset: 'islands#invertedClusterIcons',
+                    groupByCoordinates: false,
+                    clusterDisableClickZoom: true,
+                    clusterHideIconOnBalloonOpen: false,
+                    geoObjectHideIconOnBalloonOpen: false
+                }),
+
+                getPointData = function (index) {
+                    return {
+                        balloonContentBody: '"Региональное отделение совета при Правительстве РФ по вопросам попечительства в социальной сфере."',
+                        clusterCaption: '"Региональное отделение совета при Правительстве РФ по вопросам попечительства в социальной сфере."'
+                    };
+                },
+
+                getPointOptions = function () {
+                    return {
+                        preset: 'islands#icon'
+                    };
+                },
+                points = [ [51.40703,60.129042], [55.096955,51.768199], [92.852545,56.010569], [120.852545,56.010569], [120.852545,65.010569], [85.852545,65.010569], [65.852545,62.010569], [46.969065,50.044502], [139.852545,65.010569], [83.852545,62.010569], [88.852545,55.010569], [49.969065,60.044502], [33.331786,57.819365], [33.331786,66.819365], [28.331786,61.819365], [22.331786,78.819365] ],
+                geoObjects = [];
+
+            for (var i = 0, len = points.length; i < len; i++) {
+                geoObjects[i] = new ymaps.Placemark(points[i], getPointData(i), getPointOptions());
+            }
+            /**
+             * Можно менять опции кластеризатора после создания.
+             */
+
+            /**
+             * В кластеризатор можно добавить javascript-массив меток (не геоколлекцию) или одну метку.
+             * @see http://api.yandex.ru/maps/doc/jsapi/2.1/ref/reference/Clusterer.xml#add
+             */
+            clusterer.add(geoObjects);
+            myMap.geoObjects.add(clusterer);
+
+            /**
+             * Спозиционируем карту так, чтобы на ней были видны все объекты.
+             */
+
+            /*
+             myMap.setBounds(clusterer.getBounds(), {
+             checkZoomRange: true
+             });*/
+
+            // myMap.geoObjects.add(myPlacemark);
+            // myPlacemark.balloon.open();
+        });
+    
+				</script>
+				<div class="map content-width" id="map"></div>	
+
+
+
+
+			</div>
+			<div class="bottom-block manytext content-width ">
+				<div class="btns">
+					<div class="social-block">
+						<div class="txt"><a href="#">рассказать друзьям</a></div>
+						<script type="text/javascript" src="//yastatic.net/share/share.js" charset="utf-8"></script><div class="yashare-auto-init" data-yashareL10n="ru" data-yashareType="none" data-yashareQuickServices="vkontakte,facebook,twitter,odnoklassniki,moimir"></div>
+					</div>	
+				</div>
+				</div>
+			<div class="bottom-block manytext content-width ">
+				<div class="date-block">
+					01.10.2014	
+				</div>
+				<div class="istochnik">
+					<span>источник</span>
+					<div class="autor">Автор: Администратор</div>
+				</div>
+			</div>
+		</section>
+
+
+		<footer>
+			<div class="content-width">
+		        <p>© 2014 Совет при Правительстве РФ по вопросам попечительства в социальной сфере.</p>
+		        <p>Все материалы, находящиеся на сайте, охраняются в соответствии с законодательством РФ, в том числе об авторском праве и смежных правах.</p>
+		    </div>
+		</footer>
+
+
+
+	<!-- Модпльные окна -->
+		<!-- <div class="modal-wrapper">
+		</div> -->
+	<!-- / Модальные окна -->
+
+	</body>
+</html>
+	
